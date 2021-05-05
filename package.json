@@ -7,10 +7,12 @@
     "start:dev": "nodemon -r dotenv/config ./bin/www"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.5.1",
     "express": "~4.16.1",
+    "express-async-errors": "^3.1.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.7",
     "morgan": "~1.9.1"

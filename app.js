@@ -1,7 +1,9 @@
 const express = require('express');
 const path = require('path');
+require('express-async-errors');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const error = require('./middleware/async.error');
 
 require('./config/db');
 const { routes } = require('./routes');
@@ -15,5 +17,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 routes(app);
+
+app.use(error);
 
 module.exports = app;
