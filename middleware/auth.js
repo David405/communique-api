@@ -6,7 +6,7 @@ const auth = async(req, res, next) => {
 
     jwt.verify(token, process.env.SECRET, async(err, user) => {
         if(err) {
-            res.status(401).send({ success: true, message: err.message })
+            res.status(401).send({ success: false, message: err.message })
         }
         req.user = user
     })
